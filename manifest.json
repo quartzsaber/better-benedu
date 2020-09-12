@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Better Benedu",
+  "version": "1.0",
+
+  "description": "베네듀를 다시 위대하게!",
+  
+  "permissions": [
+    "webRequest",
+	"webRequestBlocking",
+	"<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["benedu.js"]
+  }
+}
