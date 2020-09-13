@@ -36,7 +36,9 @@
 			let data = JSON.parse(text);
 			if(data.Type === 'Popup') {
 				data.Type = 'Ignore';
-				setTimeout(extendSession, Math.random() * 2000 + 1000);
+				const remainMS = data.RemainSeconds * 1000;
+				const randomTiming = Math.random() * 5000 + 200;
+				setTimeout(extendSession, Math.max(0, Math.min(randomTiming, remainMS - 1000)));
 			}
 			filter.write(encoder.encode(JSON.stringify(data)));
 			filter.close();
